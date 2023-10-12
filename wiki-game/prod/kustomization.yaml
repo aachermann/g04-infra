@@ -4,7 +4,3 @@ nameSuffix: -prod
 
 resources:
   - ../base
-
-images:
-  - name: test-test
-    newTag: latest

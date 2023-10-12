@@ -4,7 +4,3 @@ nameSuffix: -intg
 
 resources:
   - ../base
-
-images:
-  - name: ngnix:latest
-    newTag: latest
