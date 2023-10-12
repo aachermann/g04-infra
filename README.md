@@ -74,4 +74,10 @@ kubeseal --format yaml < secret_gitlab-access-token.yaml > base/secrets/sealedse
 ## Probleme ArgoCD <-> Gitlab Connection
 ```bash
 kubectl patch configmap argocd-cm --type merge -p '{"data":{"sshKnownHosts.data": "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBMOoW91G9wYGGHS1A3jKX9S3tgLifxGreSjmAxnV2zUc1wDEcsnyexJ83GgGPlLfhHkf9UhEUL3v89CxgKiZB0M= \n"}}'
+
 ```
+### Basic-Auth (Username and Password)
+This method does neither works.
+
+### Moved to private GitHub Repo
+it works with ssh
