@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: List
+items:
+  - apiVersion: argoproj.io/v1alpha1
+    kind: ArgoCD
+    metadata:
+      name: argocd
+      namespace: default
+    spec:
+      # two secrets: one for team bitbucket project and one for access to the related exampe resources
+      # ArgoCD only compares if the repo url starts with the value defined under "url" and if they match, the credentials are used. So there can be multiple repos of the same project matched with one entry, by reducing the defined "url" to host and project only (without the repo part)
+      repositoryCredentials: |
+        - url: "git@gitlab.switch.ch:hslu/edu/bachelor-computer-science/devops/23hs01/g04/g04-infra.git"
+          sshPrivateKeySecret:
+            name: gitlab-ssh-key
+            key: ssh-privatekey

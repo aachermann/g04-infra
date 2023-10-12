@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: microservice
+spec:
+  orphanedResources:
+    warn: false
+  description: microservice project
+  sourceRepos:
+    - "git@gitlab.switch.ch:hslu/edu/bachelor-computer-science/devops/23hs01/g04/g04-infra.git"
+  destinations:
+    - namespace: "microservice-prod"
+      server: https://kubernetes.default.svc
+    - namespace: "microservice-intg"
+      server: https://kubernetes.default.svc
