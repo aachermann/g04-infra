@@ -10,8 +10,8 @@ items:
         namespace: "microservice-intg"
         server: "https://kubernetes.default.svc"
       source:
-        path: intg
-        repoURL: "git@gitlab.switch.ch:hslu/edu/bachelor-computer-science/devops/23hs01/g04/g04-infra.git"
+        path: wiki-game
+        repoURL: "git@github.com:aachermann/g04-infra.git"
         targetRevision: main
       project: microservice
       syncPolicy:
@@ -27,8 +27,8 @@ items:
         namespace: "microservice-prod"
         server: "https://kubernetes.default.svc"
       source:
-        path: prod
-        repoURL: "git@gitlab.switch.ch:hslu/edu/bachelor-computer-science/devops/23hs01/g04/g04-infra.git"
+        path: wiki-game/prod
+        repoURL: "git@github.com:aachermann/g04-infra.git"
         targetRevision: main
       project: microservice
       syncPolicy:

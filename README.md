@@ -11,7 +11,8 @@ su - $USER
 microk8s status --wait-ready
 microk8s kubectl get nodes
 microk8s kubectl get services
-alias kubectl='microk8s kubectl'
+echo 'alias kubectl="microk8s kubectl"' >> ~/.bashrc
+source ~/.bashrc
 microk8s enable ingress
 ```
 
