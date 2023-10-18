@@ -20,8 +20,8 @@ spec:
               protocol: TCP
           resources:
             requests:
-              cpu: 2m
-              memory: 4Mi
+              cpu: 1m
+              memory: 1Mi
             limits:
-              cpu: 50m
-              memory: 50Mi
+              cpu: 2m
+              memory: 2Mi
