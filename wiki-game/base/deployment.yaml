@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: microservice
-          image: redhat/ubi8-minimal:8.8
+          image: nginxinc/nginx-unprivileged
           ports:
             - containerPort: 8000
               protocol: TCP
