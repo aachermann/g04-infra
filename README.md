@@ -3,6 +3,9 @@
 ## Installation of microk8s (Micro-Kubernetes - SingleNode-Kubernetes)
 https://microk8s.io/
 ```bash
+ssh studnet@86.119.42.170
+
+sudo apt install snapd
 sudo snap install microk8s --classic
 echo $USER
 sudo usermod -a -G microk8s $USER
@@ -14,7 +17,10 @@ microk8s kubectl get services
 echo 'alias kubectl="microk8s kubectl"' >> ~/.bashrc
 source ~/.bashrc
 microk8s enable ingress
+kubectl get pods -n ingress
 ```
+
+
 
 
 ## Installation of ArgoCD

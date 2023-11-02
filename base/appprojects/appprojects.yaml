@@ -9,7 +9,7 @@ spec:
   sourceRepos:
     - "git@gitlab.switch.ch:hslu/edu/bachelor-computer-science/devops/23hs01/g04/g04-infra.git"
   destinations:
-    - namespace: "microservice-prod"
+    - namespace: "wikigame-prod"
       server: https://kubernetes.default.svc
-    - namespace: "microservice-intg"
+    - namespace: "wikigame-intg"
       server: https://kubernetes.default.svc

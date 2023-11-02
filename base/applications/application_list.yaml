@@ -7,7 +7,7 @@ items:
       name: microservice-intg
     spec:
       destination:
-        namespace: "microservice-intg"
+        namespace: "wikigame-intg"
         server: "https://kubernetes.default.svc"
       source:
         path: wiki-game

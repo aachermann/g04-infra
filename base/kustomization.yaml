@@ -8,7 +8,7 @@ resources:
   # application/s
   - applications/application_list.yaml
   # (sealed)secret/s, e.g. argocd key for argocd resources and your argocd repository
-  - sealedsecrets/sealedsecret_gitlab-access-token.yaml
+  #- sealedsecrets/sealedsecret_gitlab-access-token.yaml
   #- sealedsecrets/sealedsecret_gitlab-ssh-key.yaml
 
 # patches:
