@@ -27,7 +27,7 @@ items:
         namespace: "wikigame-intg"
         server: "https://kubernetes.default.svc"
       source:
-        path: wiki-game
+        path: wiki-game/intg
         repoURL: "git@github.com:aachermann/g04-infra.git"
         targetRevision: main
       project: devops
