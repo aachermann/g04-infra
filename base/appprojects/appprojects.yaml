@@ -7,7 +7,7 @@ spec:
     warn: false
   description: devops project
   sourceRepos:
-    - "git@gitlab.switch.ch:hslu/edu/bachelor-computer-science/devops/23hs01/g04/g04-infra.git"
+    - "git@github.com:aachermann/g04-infra.git"
   destinations:
     - namespace: "wikigame-prod"
       server: https://kubernetes.default.svc
