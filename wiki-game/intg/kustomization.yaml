@@ -4,4 +4,3 @@ nameSuffix: -intg
 
 resources:
   - ../base
-  - namespace.yaml

@@ -4,4 +4,4 @@ nameSuffix: -prod
 
 resources:
   - ../base
-  - namespace.yaml
+
