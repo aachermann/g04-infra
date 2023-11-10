@@ -4,7 +4,24 @@ items:
   - apiVersion: argoproj.io/v1alpha1
     kind: Application
     metadata:
-      name: microservice-intg
+      name: argocd
+    spec:
+      destination:
+        namespace: argocd
+        server: "https://kubernetes.default.svc"
+      source:
+        path: base
+        repoURL: "git@github.com:aachermann/g04-infra.git"
+        targetRevision: main
+      project: devops
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: wikigame-intg
     spec:
       destination:
         namespace: "wikigame-intg"
@@ -13,7 +30,7 @@ items:
         path: wiki-game
         repoURL: "git@github.com:aachermann/g04-infra.git"
         targetRevision: main
-      project: microservice
+      project: devops
       syncPolicy:
         automated:
           prune: true
@@ -21,7 +38,7 @@ items:
   # - apiVersion: argoproj.io/v1alpha1
   #   kind: Application
   #   metadata:
-  #     name: microservices-prod
+  #     name: wikigame-prod
   #   spec:
   #     destination:
   #       namespace: "microservice-prod"
@@ -30,7 +47,7 @@ items:
   #       path: wiki-game/prod
   #       repoURL: "git@github.com:aachermann/g04-infra.git"
   #       targetRevision: main
-  #     project: microservice
+  #     project: devops
   #     syncPolicy:
   #       automated:
   #         prune: true

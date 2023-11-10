@@ -3,7 +3,7 @@
 ## Installation of microk8s (Micro-Kubernetes - SingleNode-Kubernetes)
 https://microk8s.io/
 ```bash
-ssh studnet@86.119.42.170
+ssh student@86.119.42.170
 
 sudo apt install snapd
 sudo snap install microk8s --classic
@@ -30,20 +30,31 @@ Ressources from https://github.com/argoproj/argo-cd/
 There are some Manifests, we have to apply. 
 In the [install folder](./install/) there is the whole manifest for the ArgoCD installation.
 ```bash
-kubectl apply -f manifests/install.yaml
-kubectl patch svc argocd-server -p '{"spec": {"type": "LoadBalancer"}}'
-kubectl get svc 
-kubectl port-forward svc/argocd-server 8080:443
-kubectl get secrets argocd-initial-admin-secret -o yaml
+kubectl create namespace argocd
+kubectl apply -f install/crd_argocd.yaml -n argocd
+kubectl patch svc argocd-server -p '{"spec": {"type": "NodePort"}}' -n argocd
+kubectl get svc -n argocd
+kubectl describe svc argocd-server -n argocd | grep NodePort
+kubectl get secrets argocd-initial-admin-secret -o yaml -n argocd
+echo "Secret from above" | base64 -d
 ```
+
+On students workstation
+```bash
+ssh -L 8080:localhost:31318 student@devops-10
+```
+
+Browser:
+https://localhost:3344/
+user: admin password: decrypted_password
 
 2. SealesSecret Controller
 https://github.com/bitnami-labs/sealed-secrets
 We must have some Credentials on Kubernetes (like GitLab SSH-Key, and so on). These secrets we are not allowed to push to gitlab. So we need an mechanismn encrypt data.
 SealedSecret works with an encrypten key on kubernetes cluster. each cluster has it's own key with keyrotation. for every new cluster the sealedsecret has to be encrypted again. 
 ```bash
-microk8s kubectl apply -f https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.24.1/controller.yaml
-microk8s kubectl get pods -n kube-system -l name=sealed-secrets-controller
+kubectl apply -f https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.24.1/controller.yaml
+kubectl get pods -n kube-system -l name=sealed-secrets-controller
 
 # Installing kubeseal-CLI Tool
 KUBESEAL_VERSION='0.24.1'
@@ -53,6 +64,7 @@ sudo install -m 755 kubeseal /usr/local/bin/kubeseal
 rm -r kubeseal
 rm -r kubeseal-${KUBESEAL_VERSION:?}-linux-amd64.tar.gz
 
+mkdir -p ~/.kube/config/
 microk8s config > ~/.kube/config/config
 export KUBECONFIG=~/.kube/config
 kubectl config get-contexts
@@ -87,3 +99,8 @@ This method does neither works.
 
 ### Moved to private GitHub Repo
 it works with ssh
+
+--> no longer Troubleshooting with this issue
+
+
+# Apply Wiki-Game

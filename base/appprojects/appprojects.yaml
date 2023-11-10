@@ -1,15 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: microservice
+  name: devops
 spec:
   orphanedResources:
     warn: false
-  description: microservice project
+  description: devops project
   sourceRepos:
     - "git@gitlab.switch.ch:hslu/edu/bachelor-computer-science/devops/23hs01/g04/g04-infra.git"
   destinations:
     - namespace: "wikigame-prod"
       server: https://kubernetes.default.svc
     - namespace: "wikigame-intg"
+      server: https://kubernetes.default.svc
+    - namespace: "argocd"
       server: https://kubernetes.default.svc
