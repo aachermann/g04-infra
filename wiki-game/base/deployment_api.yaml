@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: registry.hub.docker.com/lasher23/wiki-game-api:0.0.1-SNAPSHOT
+          image: registry.hub.docker.com/lasher23/wiki-game-api:dce677e6
           ports:
             - containerPort: 8080
               protocol: TCP
