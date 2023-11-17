@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: microservice
-          image: nginxinc/nginx-unprivileged
+          image: cr.gitlab.switch.ch/hslu/edu/bachelor-computer-science/devops/23hs01/g04/g04-wiki-game/wiki-game-api:0.0.1-SNAPSHOT
           ports:
             - containerPort: 8000
               protocol: TCP
