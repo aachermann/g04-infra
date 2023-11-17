@@ -66,7 +66,7 @@ rm -r kubeseal-${KUBESEAL_VERSION:?}-linux-amd64.tar.gz
 
 mkdir -p ~/.kube/config/
 microk8s config > ~/.kube/config/config
-export KUBECONFIG=~/.kube/config
+export KUBECONFIG=~/.kube/config/config
 kubectl config get-contexts
 
 # Installing kubectl-neat Tool to make the work easyier

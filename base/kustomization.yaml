@@ -10,6 +10,7 @@ resources:
   # (sealed)secret/s, e.g. argocd key for argocd resources and your argocd repository
   #- sealedsecrets/sealedsecret_gitlab-access-token.yaml
   #- sealedsecrets/sealedsecret_gitlab-ssh-key.yaml
+  - sealedsecrets/sealedsecret_gitlab_registry.yaml
 
 # patches:
 #   - path: ./patches/patch_argocd.yaml
