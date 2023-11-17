@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wikigame-api
+  template:
+    metadata:
+      labels:
+        app: wikigame-api
+    spec:
+      containers:
+        - name: api
+          image: registry.hub.docker.com/lasher23/wiki-game-api:0.0.1-SNAPSHOT
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: mongodb-config
+          # resources:
+          #   requests:
+          #     cpu: 1m
+          #     memory: 1Mi
+          #   limits:
+          #     cpu: 2m
+          #     memory: 2Mi

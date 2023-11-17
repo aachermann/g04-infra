@@ -1,5 +1,9 @@
 kind: Kustomization
 
 resources:
-  - deployment.yaml
-  - service.yaml
+  - deployment_api.yaml
+  - deployment_ui.yaml
+  - service_api.yaml
+  - service_ui.yaml
+  - configmap.yaml
+  - ./mongodb/
