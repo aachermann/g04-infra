@@ -4,3 +4,6 @@ nameSuffix: -intg
 
 resources:
   - ../base
+
+patches:
+  - path: ./patches/patch_configmap_mongodb-config.yaml
