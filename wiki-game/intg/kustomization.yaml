@@ -4,4 +4,4 @@ nameSuffix: -intg
 
 resources:
   - ../base
-  - sealedsecrets/sealedsecret_gitlab_registry.yaml
+  - sealedsecret_gitlab_registry.yaml
