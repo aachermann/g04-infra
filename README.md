@@ -45,7 +45,7 @@ ssh -L 8080:localhost:31318 student@devops-10
 ```
 
 Browser:
-https://localhost:3344/
+https://localhost:8080/
 user: admin password: decrypted_password
 
 2. SealesSecret Controller
@@ -104,3 +104,8 @@ it works with ssh
 
 
 # Apply Wiki-Game
+```bash
+# getting NodePort on host to add the ssh-tunnel on local maschine
+kubectl get svc -n wikigame-intg
+```
+ ssh -L 8081:localhost:32083 student@devops-10

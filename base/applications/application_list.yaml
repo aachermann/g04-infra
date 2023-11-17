@@ -35,20 +35,17 @@ items:
         automated:
           prune: true
           selfHeal: true
-  # - apiVersion: argoproj.io/v1alpha1
-  #   kind: Application
-  #   metadata:
-  #     name: wikigame-prod
-  #   spec:
-  #     destination:
-  #       namespace: "microservice-prod"
-  #       server: "https://kubernetes.default.svc"
-  #     source:
-  #       path: wiki-game/prod
-  #       repoURL: "git@github.com:aachermann/g04-infra.git"
-  #       targetRevision: main
-  #     project: devops
-  #     syncPolicy:
-  #       automated:
-  #         prune: true
-  #         selfHeal: true
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: wikigame-prod
+    spec:
+      destination:
+        namespace: "wikigame-prod"
+        server: "https://kubernetes.default.svc"
+      source:
+        path: wiki-game/prod
+        repoURL: "git@github.com:aachermann/g04-infra.git"
+        targetRevision: main
+      project: devops
+      
