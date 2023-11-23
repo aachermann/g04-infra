@@ -4,10 +4,13 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 nameSuffix: -prod
 
 resources:
-  - ../base
-  - ingress.yaml
+- ../base
+- ingress.yaml
 
 patches:
-  - path: ./patches/patch_configmap_mongodb-config.yaml
-  # - sealedsecret_gitlab_registry.yaml
-
+- path: ./patches/patch_configmap_mongodb-config.yaml
+images:
+- name: registry.hub.docker.com/lasher23/wiki-game-api
+  newTag: c0242e43
+- name: registry.hub.docker.com/lasher23/wiki-game-ui
+  newTag: c0242e43
