@@ -5,6 +5,7 @@ nameSuffix: -prod
 
 resources:
   - ../base
+  - ingress.yaml
 
 patches:
   - path: ./patches/patch_configmap_mongodb-config.yaml

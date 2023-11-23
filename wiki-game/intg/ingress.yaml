@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: wikigame-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  rules:
+    - host: local.intg
+      http:
+        paths:
+          - path: /api(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: wikigame-api-intg
+                port:
+                  number: 8080
+          - path: /(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: wikigame-ui-intg
+                port:
+                  number: 8080
