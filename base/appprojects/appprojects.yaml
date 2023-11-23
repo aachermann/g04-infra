@@ -19,6 +19,5 @@ spec:
       server: https://kubernetes.default.svc
     - namespace: "monitoring"
       server: https://kubernetes.default.svc
-  resourceWhitelist:
-    - group: rbac.authorization.k8s.io
-      kind: ClusterRole
+    - namespace: "*"
+      server: https://kubernetes.default.svc
