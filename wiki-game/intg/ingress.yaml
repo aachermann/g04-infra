@@ -16,7 +16,7 @@ spec:
                 name: wikigame-api-intg
                 port:
                   number: 8080
-          - path: (?!\/api).*
+          - path: \\(?!\\/api).*
             pathType: Prefix
             backend:
               service:
