@@ -1,0 +1,5 @@
+kind: Kustomization
+
+resources:
+  - loki.yaml
+  - grafana.yaml

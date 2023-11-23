@@ -48,4 +48,17 @@ items:
         repoURL: "git@github.com:aachermann/g04-infra.git"
         targetRevision: main
       project: devops
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: monitoring
+    spec:
+      destination:
+        namespace: "monitoring"
+        server: "https://kubernetes.default.svc"
+      source:
+        path: monitoring
+        repoURL: "git@github.com:aachermann/g04-infra.git"
+        targetRevision: main
+      project: devops
       
