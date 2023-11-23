@@ -8,4 +8,8 @@ resources:
 
 patches:
 - path: ./patches/patch_configmap_mongodb-config.yaml
-
+images:
+- name: registry.hub.docker.com/lasher23/wiki-game-api
+  newTag: ae8af77a
+- name: registry.hub.docker.com/lasher23/wiki-game-ui
+  newTag: ae8af77a
