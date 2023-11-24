@@ -14,6 +14,7 @@ kubectl get svc -n argocd
 kubectl describe svc argocd-server -n argocd | grep NodePort
 kubectl get secrets argocd-initial-admin-secret -o yaml -n argocd
 echo "Secret from above" | base64 -d
+kubectl get secrets argocd-initial-admin-secret -o jsonpath="{.data.password}"  -n argocd| base64 --decode ; echo
 ```
 
 On students workstation

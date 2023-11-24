@@ -23,3 +23,18 @@ Host devops-10
 ```
 
 ## Ingress
+
+## ArgoCD not allowed to create Clusterroles
+```bash
+argocd 
+resource rbac.authorization.k8s.io:ClusterRole is not permitted in project devops
+```
+Added in [AppProject](base/appprojects/appprojects.yaml) the RessourceWhitelisting
+```bash
+clusterResourceWhitelist:
+    - group: rbac.authorization.k8s.io
+      kind: ClusterRole
+    - group: rbac.authorization.k8s.io
+      kind: ClusterRoleBinding
+
+```

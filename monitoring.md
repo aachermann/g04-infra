@@ -26,10 +26,26 @@ helm template loki grafana/loki-stack --namespace monitoring > monitoring/loki.y
 helm template grafana grafana/grafana --namespace monitoring > monitoring/grafana.yaml
 ```
 
+### Prometheus Operator
+```bash
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+
+helm template prometheus prometheus-community/kube-prometheus-stack --namespace monitoring > monitoring/prometheus.yaml
+```
+
+
+
 ### Namespace
 
 ```bash
 kubectl create namespace monitoring
 ```
 
+
+
 ### Sync ArgoCD
+
+```bash
+kubectl get secrets -n monitoring grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+```

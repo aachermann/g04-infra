@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
   - loki.yaml
   - grafana.yaml
+  - prometheus.yaml
   - ingress.yaml

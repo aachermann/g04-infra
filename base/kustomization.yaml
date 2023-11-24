@@ -11,6 +11,7 @@ resources:
   #- sealedsecrets/sealedsecret_gitlab-access-token.yaml
   #- sealedsecrets/sealedsecret_gitlab-ssh-key.yaml
   - sealedsecrets/sealedsecret_gitlab_registry.yaml
+  - ingress.yaml
 
 # patches:
 #   - path: ./patches/patch_argocd.yaml
