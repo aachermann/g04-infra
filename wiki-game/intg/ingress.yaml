@@ -9,14 +9,14 @@ spec:
     - host: intg.wikigame.devops
       http:
         paths:
-          - path: /api(/|$)(.*)
+          - path: /api
             pathType: Prefix
             backend:
               service:
                 name: wikigame-api-intg
                 port:
                   number: 8080
-          - path: /(.*)
+          - path: /
             pathType: Prefix
             backend:
               service:
