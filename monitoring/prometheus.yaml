@@ -1436,7 +1436,7 @@ metadata:
     chart: kube-prometheus-stack-54.2.2
     release: "prometheus"
     heritage: "Helm"
-  namespace: kube-system
+  namespace: monitoring
 spec:
   clusterIP: None
   ports:
@@ -1463,7 +1463,7 @@ metadata:
     chart: kube-prometheus-stack-54.2.2
     release: "prometheus"
     heritage: "Helm"
-  namespace: kube-system
+  namespace: monitoring
 spec:
   clusterIP: None
   ports:
@@ -1491,7 +1491,7 @@ metadata:
     chart: kube-prometheus-stack-54.2.2
     release: "prometheus"
     heritage: "Helm"
-  namespace: kube-system
+  namespace: monitoring
 spec:
   clusterIP: None
   ports:
@@ -1519,7 +1519,7 @@ metadata:
     chart: kube-prometheus-stack-54.2.2
     release: "prometheus"
     heritage: "Helm"
-  namespace: kube-system
+  namespace: monitoring
 spec:
   clusterIP: None
   ports:
@@ -1547,7 +1547,7 @@ metadata:
     chart: kube-prometheus-stack-54.2.2
     release: "prometheus"
     heritage: "Helm"
-  namespace: kube-system
+  namespace: monitoring
 spec:
   clusterIP: None
   ports:
