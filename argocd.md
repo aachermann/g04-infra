@@ -19,7 +19,7 @@ kubectl get secrets argocd-initial-admin-secret -o jsonpath="{.data.password}"  
 
 On students workstation
 ```bash
-ssh -L 8080:localhost:31318 student@devops-10
+ssh -L 8080:localhost:31915 student@devops-10
 ```
 
 Browser:
