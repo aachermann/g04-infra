@@ -28,7 +28,7 @@ helm template grafana grafana/grafana --namespace monitoring > monitoring/grafan
 
 ### Prometheus Operator
 ```bash
-helm template prometheus prometheus-community/kube-prometheus-stack --namespace monitoring
+helm install prometheus prometheus-community/kube-prometheus-stack --namespace monitoring
 ```
 
 

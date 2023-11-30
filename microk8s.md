@@ -24,8 +24,8 @@ source ~/.bashrc
 
 # export kubeconfig
 mkdir -p ~/.kube/config/
-microk8s config > ~/.kube/config/config
-export KUBECONFIG=~/.kube/config/config
+microk8s config > ~/.kube/config
+export KUBECONFIG=~/.kube/config
 kubectl config get-contexts
 
 # make cluster available from outside
