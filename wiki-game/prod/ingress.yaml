@@ -9,7 +9,7 @@ spec:
     - host: prod.wikigame.devops
       http:
         paths:
-          - path: /api(/|$)(.*)
+          - path: /api
             pathType: Prefix
             backend:
               service:
@@ -17,7 +17,7 @@ spec:
                 port:
                   number: 8080
           - path: /
-            pathType: Exact
+            pathType: Prefix
             backend:
               service:
                 name: wikigame-ui-prod

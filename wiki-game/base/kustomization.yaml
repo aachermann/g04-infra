@@ -7,4 +7,5 @@ resources:
   - service_ui.yaml
   - configmap.yaml
   - ./mongodb/
+  - service_api-metrics.yaml
   # - ingress.yaml
