@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: api
-   annotations:
+  annotations:
     prometheus.io/scrape: 'true'
     prometheus.io/port: '8081'
     prometheus.io/path: '/actuator/prometheus'
