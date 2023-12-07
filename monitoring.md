@@ -21,18 +21,11 @@ helm repo update
 helm template loki grafana/loki-stack --namespace monitoring > monitoring/loki.yaml
 ```
 
-### Grafana
-```bash
-helm template grafana grafana/grafana --namespace monitoring > monitoring/grafana.yaml
-```
-
-### Prometheus Operator
+### Prometheus und Grafana
 ```bash
 helm install prometheus prometheus-community/kube-prometheus-stack --namespace monitoring
 kubectl get secret --namespace monitoring prometheus-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 ```
-
-
 
 ### Namespace
 
@@ -47,3 +40,9 @@ kubectl create namespace monitoring
 ```bash
 kubectl get secrets -n monitoring grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 ```
+
+### Settings
+Login http://monitoring.devops
+#### Loki
+![Loki](images/loki.png)
+

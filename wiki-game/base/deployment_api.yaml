@@ -2,6 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: api
+   annotations:
+    prometheus.io/scrape: 'true'
+    prometheus.io/port: '8081'
+    prometheus.io/path: '/actuator/prometheus'
 spec:
   replicas: 1
   selector:
@@ -17,6 +21,8 @@ spec:
           image: registry.hub.docker.com/lasher23/wiki-game-api:dce677e6
           ports:
             - containerPort: 8080
+              protocol: TCP
+            - containerPort: 8081
               protocol: TCP
           envFrom:
             - configMapRef:
