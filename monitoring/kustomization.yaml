@@ -4,5 +4,5 @@ resources:
   - loki.yaml
   - grafana.yaml
   # - prometheus.yaml
-  # - ingress_grafana.yaml
+  - ingress_grafana.yaml
   - ingress_monitoring.yaml

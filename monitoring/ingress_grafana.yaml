@@ -15,13 +15,3 @@ spec:
                 name: grafana
                 port:
                   number: 80
-    - host: monitoring.devops
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: prometheus-grafana
-                port:
-                  number: 80
