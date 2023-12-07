@@ -29,6 +29,7 @@ helm template grafana grafana/grafana --namespace monitoring > monitoring/grafan
 ### Prometheus Operator
 ```bash
 helm install prometheus prometheus-community/kube-prometheus-stack --namespace monitoring
+kubectl get secret --namespace monitoring prometheus-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 ```
 
 
