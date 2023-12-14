@@ -4,7 +4,6 @@ metadata:
   name: wikigame-metrics
   labels:
     release: prometheus
-  namespace: wikigame-intg
 spec:
   selector:
     matchLabels:
