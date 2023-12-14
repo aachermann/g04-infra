@@ -6,3 +6,4 @@ resources:
   # - prometheus.yaml
   - ingress_grafana.yaml
   - ingress_monitoring.yaml
+  - ingress_prometheus.yaml

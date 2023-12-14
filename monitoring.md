@@ -46,3 +46,5 @@ Login http://monitoring.devops
 #### Loki
 ![Loki](images/loki.png)
 
+Application-Logs
+![Alt text](images/loki_logs.png)
