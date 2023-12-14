@@ -142,11 +142,8 @@ data:
               names:
                 - wikigame-intg
         relabel_configs:
-          - source_labels: [__meta_kubernetes_service_name]
-            regex: 'wikigame-metrics-intg'
-            action: keep
-          - source_labels: [__meta_kubernetes_endpoint_port_name]
-            regex: '8081'
+          - source_labels: [__meta_kubernetes_namespace]
+            regex: 'wikigame-intg'
             action: keep
       - job_name: 'wikigame-metrics-prod'
         kubernetes_sd_configs:
@@ -159,5 +156,5 @@ data:
             regex: 'wikigame-metrics-prod'
             action: keep
           - source_labels: [__meta_kubernetes_endpoint_port_name]
-            regex: '8081'
+            regex: 'http'
             action: keep
