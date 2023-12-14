@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: wikigame-metrics
+  labels:
+    release: prometheus
+  namespace: wikigame-intg
+spec:
+  selector:
+    matchLabels:
+      app: wikigame-api
+  endpoints:
+  - port: http
+    path: /actuator/prometheus

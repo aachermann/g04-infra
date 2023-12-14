@@ -8,4 +8,5 @@ resources:
   - configmap.yaml
   - ./mongodb/
   - service_api-metrics.yaml
+  - servicemonitor.yaml
   # - ingress.yaml
