@@ -8,3 +8,4 @@ resources:
   - ingress_monitoring.yaml
   - ingress_prometheus.yaml
   - service_cluster-monitoring.yaml
+  - configmap_prometheus-server-conf.yaml
