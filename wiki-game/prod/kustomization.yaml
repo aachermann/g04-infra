@@ -11,6 +11,6 @@ patches:
 - path: ./patches/patch_configmap_mongodb-config.yaml
 images:
 - name: registry.hub.docker.com/lasher23/wiki-game-api
-  newTag: 3a648c9a
+  newTag: 5c2f78bf
 - name: registry.hub.docker.com/lasher23/wiki-game-ui
-  newTag: 3a648c9a
+  newTag: 5c2f78bf
