@@ -16,3 +16,8 @@ We also had some Problems:
 * [Problems and Learnings](problems.md)
 
 
+---
+We have also tried out some new technologies:
+* [AWS EKS and Fargate](aws.md)
+---
+
